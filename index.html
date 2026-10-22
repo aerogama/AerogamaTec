@@ -12,6 +12,7 @@
             --neon-pink: #ff2a6d;
             --neon-cyan: #05d9e8;
             --neon-purple: #b967ff;
+            --neon-gold: #ffb703;
             --text-main: #f0f0f5;
             --text-muted: #8b8b9e;
             --border-glow: rgba(255, 42, 109, 0.4);
@@ -47,7 +48,7 @@
         .header-banner {
             position: relative;
             width: 100%;
-            height: 220px;
+            height: 180px;
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid var(--neon-cyan);
@@ -59,7 +60,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.8);
+            filter: brightness(0.75);
         }
 
         .header-overlay {
@@ -69,7 +70,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 20px 30px;
+            padding: 15px 25px;
             flex-wrap: wrap;
             gap: 15px;
         }
@@ -77,12 +78,12 @@
         .brand-info {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .brand-avatar {
-            width: 55px;
-            height: 55px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             border: 2px solid var(--neon-pink);
             object-fit: cover;
@@ -91,7 +92,7 @@
 
         .brand-text h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 900;
             letter-spacing: 1.5px;
             color: #fff;
@@ -100,7 +101,7 @@
 
         .brand-text p {
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
@@ -108,11 +109,11 @@
         .fb-btn {
             background: linear-gradient(135deg, #1877f2, #0d5bb9);
             color: white;
-            padding: 8px 18px;
+            padding: 8px 16px;
             border-radius: 6px;
             text-decoration: none;
             font-family: 'Orbitron', sans-serif;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             box-shadow: 0 0 10px rgba(24, 119, 242, 0.4);
             transition: all 0.3s ease;
@@ -145,7 +146,7 @@
             background: var(--panel-bg);
             border: 1px solid var(--border-glow);
             border-radius: 14px;
-            padding: 30px;
+            padding: 25px;
             margin-bottom: 35px;
             box-shadow: 0 8px 30px rgba(0,0,0,0.6);
             backdrop-filter: blur(10px);
@@ -153,8 +154,8 @@
 
         .model-grid {
             display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 30px;
+            grid-template-columns: 320px 1fr;
+            gap: 25px;
         }
 
         @media (max-width: 900px) {
@@ -170,12 +171,12 @@
         .model-profile-col {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .model-main-img {
             width: 100%;
-            height: 440px;
+            height: 400px;
             object-fit: cover;
             border-radius: 10px;
             border: 2px solid var(--neon-pink);
@@ -190,25 +191,25 @@
 
         .model-header-info h2 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: #fff;
             margin-bottom: 5px;
         }
 
         .model-tagline {
             color: var(--neon-cyan);
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 600;
             letter-spacing: 1px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             text-transform: uppercase;
         }
 
         .model-bio {
             color: var(--text-main);
-            font-size: 1.05rem;
+            font-size: 1rem;
             line-height: 1.5;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         /* AUDIO TEASER */
@@ -216,15 +217,15 @@
             background: rgba(5, 217, 232, 0.04);
             border: 1px solid var(--neon-cyan);
             border-radius: 8px;
-            padding: 12px 18px;
-            margin-bottom: 20px;
+            padding: 10px 15px;
+            margin-bottom: 18px;
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
         .audio-wave-icon {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             animation: pulse 1.5s infinite;
         }
 
@@ -235,7 +236,7 @@
         }
 
         .audio-title {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -243,32 +244,32 @@
 
         .audio-sub {
             font-family: 'Orbitron', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #fff;
             margin-bottom: 4px;
         }
 
         audio {
             width: 100%;
-            height: 34px;
+            height: 32px;
             filter: invert(1) hue-rotate(180deg);
         }
 
-        /* BUTTONS */
+        /* BUTTONS GRID */
         .platform-buttons {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 12px;
-            margin-bottom: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 10px;
+            margin-bottom: 18px;
         }
 
         .plat-btn {
-            padding: 12px 15px;
+            padding: 10px 12px;
             border-radius: 6px;
             text-decoration: none;
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.82rem;
             text-align: center;
             transition: all 0.3s ease;
             display: flex;
@@ -286,6 +287,18 @@
             background: var(--neon-cyan); 
             color: #000; 
             box-shadow: 0 0 15px var(--neon-cyan); 
+            transform: translateY(-2px);
+        }
+
+        .btn-eternal { 
+            background: transparent; 
+            border: 2px solid var(--neon-purple); 
+            color: var(--neon-purple); 
+        }
+        .btn-eternal:hover { 
+            background: var(--neon-purple); 
+            color: #fff; 
+            box-shadow: 0 0 15px var(--neon-purple); 
             transform: translateY(-2px);
         }
 
@@ -310,16 +323,16 @@
 
         /* GALLERY */
         .gallery-container {
-            margin-top: 20px;
+            margin-top: 15px;
             border-top: 1px dashed rgba(255,255,255,0.15);
-            padding-top: 15px;
+            padding-top: 12px;
         }
 
         .gallery-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--text-main);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             gap: 6px;
@@ -327,13 +340,13 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+            gap: 8px;
         }
 
         .thumb-wrap {
             position: relative;
-            height: 120px;
+            height: 110px;
             border-radius: 6px;
             overflow: hidden;
             border: 1px solid rgba(255,255,255,0.2);
@@ -390,12 +403,12 @@
         .template-instruction {
             background: rgba(185, 103, 255, 0.04);
             border: 1px dashed var(--neon-purple);
-            padding: 15px;
-            border-radius: 10px;
+            padding: 12px;
+            border-radius: 8px;
             text-align: center;
             color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 30px;
+            font-size: 0.85rem;
+            margin-top: 25px;
         }
     </style>
 </head>
@@ -428,7 +441,7 @@
                 <!-- Columna Izquierda -->
                 <div class="model-profile-col">
                     <img src="https://lh3.googleusercontent.com/d/16Q1iiT_DGjBQy6a5fjI8-oeG54F2o4CT" alt="Mei Lin" class="model-main-img">
-                    <div style="font-size: 0.8rem; color: var(--text-muted); text-align: center;">
+                    <div style="font-size: 0.75rem; color: var(--text-muted); text-align: center;">
                         AGENT ID: #001-MEILIN | ACTIVA 24/7
                     </div>
                 </div>
@@ -446,23 +459,23 @@
                         </p>
                     </div>
 
-                    <!-- Audio Teaser con fuente alternativa garantizada para reproducción -->
+                    <!-- Audio Teaser -->
                     <div class="audio-player-box">
                         <div class="audio-wave-icon">🎙️</div>
                         <div style="flex-grow: 1;">
                             <div class="audio-title">Voz Oficial / Audio Teaser</div>
                             <div class="audio-sub">"¿Te quedas a estudiar conmigo esta noche?"</div>
-                            <audio controls preload="auto">
-                                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-                                <source src="https://lh3.googleusercontent.com/d/1SFSzMwJq8B2VjihPZiOhWSNV65YDlSF1" type="audio/mpeg">
+                            <audio controls preload="metadata">
+                                <source src="https://docs.google.com/uc?export=download&id=1SFSzMwJq8B2VjihPZiOhWSNV65YDlSF1" type="audio/mpeg">
                                 Tu navegador no soporta audio.
                             </audio>
                         </div>
                     </div>
 
-                    <!-- Botones -->
+                    <!-- Botones de Plataformas -->
                     <div class="platform-buttons">
                         <a href="https://poe.com/MeiLin1.0" target="_blank" class="plat-btn btn-poe">🤖 Poe Chat</a>
+                        <a href="https://eternalai.org/share/m/6jepge?r=85j88p0xt" target="_blank" class="plat-btn btn-eternal">🔮 Eternal AI</a>
                         <div class="plat-btn btn-of" title="Próximamente">🔥 OnlyFans (Pronto)</div>
                         <a href="https://www.patreon.com/aerogama/posts/set-oficial-mei-172861576?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link" target="_blank" class="plat-btn btn-patreon">💎 Patreon Set</a>
                     </div>
