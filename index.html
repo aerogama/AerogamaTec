@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AerogamaTec - AI Companions & Media</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050508;
+            --panel-bg: rgba(12, 12, 20, 0.9);
+            --neon-pink: #ff2a6d;
+            --neon-cyan: #05d9e8;
+            --neon-purple: #b967ff;
+            --text-main: #f0f0f5;
+            --text-muted: #8b8b9e;
+            --border-glow: rgba(255, 42, 109, 0.4);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Rajdhani', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(185, 103, 255, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(5, 217, 232, 0.08) 0%, transparent 40%);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* HEADER & BANNER */
+        .header-banner {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid var(--neon-cyan);
+            box-shadow: 0 0 25px rgba(5, 217, 232, 0.25);
+            margin-bottom: 35px;
+        }
+
+        .header-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.85);
+        }
+
+        .header-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(5,5,8,0.2) 0%, rgba(5,5,8,0.9) 100%);
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .brand-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .brand-avatar {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            border: 2px solid var(--neon-pink);
+            object-fit: cover;
+            box-shadow: 0 0 15px var(--neon-pink);
+        }
+
+        .brand-text h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #fff;
+            text-shadow: 0 0 10px var(--neon-pink);
+        }
+
+        .brand-text p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .fb-btn {
+            background: linear-gradient(135deg, #1877f2, #0d5bb9);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 0 15px rgba(24, 119, 242, 0.4);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .fb-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(24, 119, 242, 0.7);
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+            border-left: 4px solid var(--neon-pink);
+            padding-left: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* MODEL CARD */
+        .model-card {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.7);
+            backdrop-filter: blur(12px);
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 35px;
+        }
+
+        @media (max-width: 950px) {
+            .model-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-overlay {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        .model-profile-col {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .model-main-img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid var(--neon-pink);
+            box-shadow: 0 0 20px rgba(255, 42, 109, 0.3);
+        }
+
+        .model-details-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .model-header-info h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255,255,255,0.3);
+            margin-bottom: 5px;
+        }
+
+        .model-tagline {
+            color: var(--neon-cyan);
+            font-size: 1.15rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .model-bio {
+            color: var(--text-main);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* AUDIO TEASER */
+        .audio-player-box {
+            background: rgba(5, 217, 232, 0.05);
+            border: 1px solid var(--neon-cyan);
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .audio-wave-icon {
+            font-size: 1.6rem;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.15); opacity: 1; text-shadow: 0 0 10px var(--neon-cyan); }
+            100% { transform: scale(1); opacity: 0.7; }
+        }
+
+        .audio-title {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .audio-sub {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        audio {
+            width: 100%;
+            height: 38px;
+            filter: invert(1) hue-rotate(180deg);
+        }
+
+        /* BUTTONS */
+        .platform-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .plat-btn {
+            padding: 14px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-poe { 
+            background: transparent; 
+            border: 2px solid var(--neon-cyan); 
+            color: var(--neon-cyan); 
+            box-shadow: 0 0 10px rgba(5, 217, 232, 0.2);
+        }
+        .btn-poe:hover { 
+            background: var(--neon-cyan); 
+            color: #000; 
+            box-shadow: 0 0 20px var(--neon-cyan); 
+            transform: translateY(-2px);
+        }
+
+        .btn-of { 
+            background: rgba(255,255,255,0.03); 
+            border: 2px dashed rgba(255,255,255,0.2); 
+            color: var(--text-muted); 
+            cursor: not-allowed;
+        }
+
+        .btn-patreon { 
+            background: transparent; 
+            border: 2px solid #ff424d; 
+            color: #ff424d; 
+            box-shadow: 0 0 10px rgba(255, 66, 77, 0.2);
+        }
+        .btn-patreon:hover { 
+            background: #ff424d; 
+            color: #fff; 
+            box-shadow: 0 0 20px #ff424d; 
+            transform: translateY(-2px);
+        }
+
+        /* GALLERY */
+        .gallery-container {
+            margin-top: 25px;
+            border-top: 1px dashed rgba(255,255,255,0.15);
+            padding-top: 20px;
+        }
+
+        .gallery-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+            gap: 12px;
+        }
+
+        .thumb-wrap {
+            position: relative;
+            height: 135px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .thumb-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .thumb-wrap:hover img {
+            transform: scale(1.1);
+        }
+
+        .thumb-wrap:hover {
+            border-color: var(--neon-pink);
+            box-shadow: 0 0 12px var(--neon-pink);
+        }
+
+        /* LIGHTBOX */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+            border: 2px solid var(--neon-cyan);
+            box-shadow: 0 0 30px var(--neon-cyan);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: #fff;
+            font-size: 2.5rem;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            transition: color 0.3s;
+        }
+
+        .lightbox-close:hover {
+            color: var(--neon-pink);
+        }
+
+        .template-instruction {
+            background: rgba(185, 103, 255, 0.05);
+            border: 1px dashed var(--neon-purple);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 40px;
+        }
+        .template-instruction strong {
+            color: var(--neon-purple);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER / BANNER -->
+        <header class="header-banner">
+            <img src="https://lh3.googleusercontent.com/d/1fPQ3TnIB09lXN2TFpYqviyyYcz4WU9lS" alt="AerogamaTec Banner">
+            <div class="header-overlay">
+                <div class="brand-info">
+                    <img src="https://lh3.googleusercontent.com/d/135OlkjR-fzELJh3e01Nr4dGJ_jfM-6AW" alt="AerogamaTec Avatar" class="brand-avatar">
+                    <div class="brand-text">
+                        <h1>AEROGAMATEC</h1>
+                        <p>AI Companions & Media Agency</p>
+                    </div>
+                </div>
+                <a href="https://www.facebook.com/aerogamatec" target="_blank" class="fb-btn">
+                    <span>📘 Facebook Oficial</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- TÍTULO -->
+        <h2 class="section-title">✨ Catálogo de Modelos IA Activas</h2>
+
+        <!-- MODELO: MEI LIN -->
+        <div class="model-card">
+            <div class="model-grid">
+                <!-- Columna Izquierda: Imagen Principal -->
+                <div class="model-profile-col">
+                    <img src="https://lh3.googleusercontent.com/d/16Q1iiT_DGjBQy6a5fjI8-oeG54F2o4CT" alt="Mei Lin" class="model-main-img">
+                    <div style="font-size: 0.85rem; color: var(--text-muted); text-align: center;">
+                        AGENT ID: #001-MEILIN | ESTADO: ACTIVA 24/7
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Información y Enlaces -->
+                <div class="model-details-col">
+                    <div>
+                        <div class="model-header-info">
+                            <h2>Mei Lin</h2>
+                        </div>
+                        <div class="model-tagline">La Estudiante & Compañera Intelectual</div>
+                        <p class="model-bio">
+                            Apasionada por la literatura antigua, los análisis económicos y las largas charlas nocturnas. 
+                            Mei Lin combina su apariencia dulce y académica con una personalidad cautivadora, atenta y profunda. 
+                            Interactúa con ella en tiempo real, descubre su lado más íntimo y apoya su evolución en el estudio.
+                        </p>
+                    </div>
+
+                    <!-- Audio Teaser con la voz real de Charlotte / Mei Lin -->
+                    <div class="audio-player-box">
+                        <div class="audio-wave-icon">🎙️</div>
+                        <div style="flex-grow: 1;">
+                            <div class="audio-title">Voz Oficial / Audio Teaser</div>
+                            <div class="audio-sub">"¿Te quedas a estudiar conmigo esta noche?"</div>
+                            <audio controls>
+                                <source src="https://lh3.googleusercontent.com/d/1SFSzMwJq8B2VjihPZiOhWSNV65YDlSF1" type="audio/mpeg">
+                                Tu navegador no soporta audio HTML5.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Botones de Plataformas Oficiales -->
+                    <div class="platform-buttons">
+                        <a href="https://poe.com/MeiLin1.0" target="_blank" class="plat-btn btn-poe">🤖 Poe Chat</a>
+                        <div class="plat-btn btn-of" title="Próximamente">🔥 OnlyFans (Pronto)</div>
+                        <a href="https://www.patreon.com/aerogama/posts/set-oficial-mei-172861576?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link" target="_blank" class="plat-btn btn-patreon">💎 Patreon Set</a>
+                    </div>
+
+                    <!-- Galería de Fotos (Lightbox) -->
+                    <div class="gallery-container">
+                        <div class="gallery-title">📷 Galería Teaser de Mei Lin <span style="font-size:0.8rem; color:var(--text-muted); margin-left:auto;">Haz clic para ampliar</span></div>
+                        <div class="gallery-grid">
+                            <div class="thumb-wrap" onclick="openLightbox(this.querySelector('img').src)">
+                                <img src="https://lh3.googleusercontent.com/d/1aYxzleyj_PSDKXT2LBfX_jQVwgFC8mNQ" alt="Mei Lin 2">
+                            </div>
+                            <div class="thumb-wrap" onclick="openLightbox(this.querySelector('img').src)">
+                                <img src="https://lh3.googleusercontent.com/d/1V5rviNROlafG97YNJ_dSVdRglnTGwe-G" alt="Mei Lin 3">
+                            </div>
+                            <div class="thumb-wrap" onclick="openLightbox(this.querySelector('img').src)">
+                                <img src="https://lh3.googleusercontent.com/d/1y7iY9hegdyxfWbfumZ2zGaAQmfyoicQN" alt="Mei Lin 4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="template-instruction">
+            <strong>💡 Nota:</strong> Para agregar nuevas modelos en el futuro, solo duplica el bloque <code>.model-card</code> en el código.
+        </div>
+    </div>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightboxImg" src="" alt="Ampliada">
+    </div>
+
+    <script>
+        function openLightbox(imgSrc) {
+            const modal = document.getElementById('lightboxModal');
+            const modalImg = document.getElementById('lightboxImg');
+            modal.style.display = 'flex';
+            modalImg.src = imgSrc;
+        }
+        function closeLightbox() {
+            document.getElementById('lightboxModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
