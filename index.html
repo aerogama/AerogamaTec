@@ -8,7 +8,7 @@
     <style>
         :root {
             --bg-dark: #050508;
-            --panel-bg: rgba(12, 12, 20, 0.9);
+            --panel-bg: rgba(12, 12, 20, 0.92);
             --neon-pink: #ff2a6d;
             --neon-cyan: #05d9e8;
             --neon-purple: #b967ff;
@@ -33,74 +33,74 @@
             padding: 20px;
             overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(185, 103, 255, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(5, 217, 232, 0.08) 0%, transparent 40%);
+                radial-gradient(circle at 10% 20%, rgba(185, 103, 255, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(5, 217, 232, 0.06) 0%, transparent 40%);
         }
 
         .container {
             width: 100%;
-            max-width: 1300px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* HEADER & BANNER */
+        /* HEADER & BANNER OPTIMIZADO */
         .header-banner {
             position: relative;
             width: 100%;
-            height: 350px;
-            border-radius: 16px;
+            height: 220px;
+            border-radius: 12px;
             overflow: hidden;
-            border: 2px solid var(--neon-cyan);
-            box-shadow: 0 0 25px rgba(5, 217, 232, 0.25);
-            margin-bottom: 35px;
+            border: 1px solid var(--neon-cyan);
+            box-shadow: 0 0 20px rgba(5, 217, 232, 0.2);
+            margin-bottom: 30px;
         }
 
         .header-banner img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.85);
+            filter: brightness(0.8);
         }
 
         .header-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(5,5,8,0.2) 0%, rgba(5,5,8,0.9) 100%);
+            background: linear-gradient(180deg, rgba(5,5,8,0.1) 0%, rgba(5,5,8,0.85) 100%);
             display: flex;
-            align-items: flex-end;
+            align-items: center;
             justify-content: space-between;
-            padding: 30px;
+            padding: 20px 30px;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px;
         }
 
         .brand-info {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
 
         .brand-avatar {
-            width: 85px;
-            height: 85px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             border: 2px solid var(--neon-pink);
             object-fit: cover;
-            box-shadow: 0 0 15px var(--neon-pink);
+            box-shadow: 0 0 10px var(--neon-pink);
         }
 
         .brand-text h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 2.2rem;
+            font-size: 1.6rem;
             font-weight: 900;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             color: #fff;
-            text-shadow: 0 0 10px var(--neon-pink);
+            text-shadow: 0 0 8px var(--neon-pink);
         }
 
         .brand-text p {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 0.85rem;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
@@ -108,34 +108,34 @@
         .fb-btn {
             background: linear-gradient(135deg, #1877f2, #0d5bb9);
             color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
+            padding: 8px 18px;
+            border-radius: 6px;
             text-decoration: none;
             font-family: 'Orbitron', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            box-shadow: 0 0 15px rgba(24, 119, 242, 0.4);
+            box-shadow: 0 0 10px rgba(24, 119, 242, 0.4);
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
 
         .fb-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 25px rgba(24, 119, 242, 0.7);
+            box-shadow: 0 0 18px rgba(24, 119, 242, 0.7);
         }
 
         .section-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.6rem;
-            margin-bottom: 25px;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             color: #fff;
             border-left: 4px solid var(--neon-pink);
-            padding-left: 12px;
+            padding-left: 10px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -144,20 +144,20 @@
         .model-card {
             background: var(--panel-bg);
             border: 1px solid var(--border-glow);
-            border-radius: 16px;
-            padding: 35px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 35px rgba(0,0,0,0.7);
-            backdrop-filter: blur(12px);
+            border-radius: 14px;
+            padding: 30px;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
         }
 
         .model-grid {
             display: grid;
-            grid-template-columns: 380px 1fr;
-            gap: 35px;
+            grid-template-columns: 350px 1fr;
+            gap: 30px;
         }
 
-        @media (max-width: 950px) {
+        @media (max-width: 900px) {
             .model-grid {
                 grid-template-columns: 1fr;
             }
@@ -170,16 +170,16 @@
         .model-profile-col {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
         }
 
         .model-main-img {
             width: 100%;
-            height: 480px;
+            height: 440px;
             object-fit: cover;
-            border-radius: 12px;
+            border-radius: 10px;
             border: 2px solid var(--neon-pink);
-            box-shadow: 0 0 20px rgba(255, 42, 109, 0.3);
+            box-shadow: 0 0 15px rgba(255, 42, 109, 0.3);
         }
 
         .model-details-col {
@@ -190,53 +190,52 @@
 
         .model-header-info h2 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: #fff;
-            text-shadow: 0 0 10px rgba(255,255,255,0.3);
             margin-bottom: 5px;
         }
 
         .model-tagline {
             color: var(--neon-cyan);
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             font-weight: 600;
             letter-spacing: 1px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             text-transform: uppercase;
         }
 
         .model-bio {
             color: var(--text-main);
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
+            font-size: 1.05rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
         }
 
         /* AUDIO TEASER */
         .audio-player-box {
-            background: rgba(5, 217, 232, 0.05);
+            background: rgba(5, 217, 232, 0.04);
             border: 1px solid var(--neon-cyan);
-            border-radius: 10px;
-            padding: 15px 20px;
-            margin-bottom: 25px;
+            border-radius: 8px;
+            padding: 12px 18px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .audio-wave-icon {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             animation: pulse 1.5s infinite;
         }
 
         @keyframes pulse {
             0% { transform: scale(1); opacity: 0.7; }
-            50% { transform: scale(1.15); opacity: 1; text-shadow: 0 0 10px var(--neon-cyan); }
+            50% { transform: scale(1.15); opacity: 1; text-shadow: 0 0 8px var(--neon-cyan); }
             100% { transform: scale(1); opacity: 0.7; }
         }
 
         .audio-title {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -244,55 +243,54 @@
 
         .audio-sub {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #fff;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         audio {
             width: 100%;
-            height: 38px;
+            height: 34px;
             filter: invert(1) hue-rotate(180deg);
         }
 
         /* BUTTONS */
         .platform-buttons {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 15px;
-            margin-bottom: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
         }
 
         .plat-btn {
-            padding: 14px 20px;
-            border-radius: 8px;
+            padding: 12px 15px;
+            border-radius: 6px;
             text-decoration: none;
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             text-align: center;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 6px;
         }
 
         .btn-poe { 
             background: transparent; 
             border: 2px solid var(--neon-cyan); 
             color: var(--neon-cyan); 
-            box-shadow: 0 0 10px rgba(5, 217, 232, 0.2);
         }
         .btn-poe:hover { 
             background: var(--neon-cyan); 
             color: #000; 
-            box-shadow: 0 0 20px var(--neon-cyan); 
+            box-shadow: 0 0 15px var(--neon-cyan); 
             transform: translateY(-2px);
         }
 
         .btn-of { 
-            background: rgba(255,255,255,0.03); 
+            background: rgba(255,255,255,0.02); 
             border: 2px dashed rgba(255,255,255,0.2); 
             color: var(--text-muted); 
             cursor: not-allowed;
@@ -302,42 +300,41 @@
             background: transparent; 
             border: 2px solid #ff424d; 
             color: #ff424d; 
-            box-shadow: 0 0 10px rgba(255, 66, 77, 0.2);
         }
         .btn-patreon:hover { 
             background: #ff424d; 
             color: #fff; 
-            box-shadow: 0 0 20px #ff424d; 
+            box-shadow: 0 0 15px #ff424d; 
             transform: translateY(-2px);
         }
 
         /* GALLERY */
         .gallery-container {
-            margin-top: 25px;
+            margin-top: 20px;
             border-top: 1px dashed rgba(255,255,255,0.15);
-            padding-top: 20px;
+            padding-top: 15px;
         }
 
         .gallery-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--text-main);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+            gap: 10px;
         }
 
         .thumb-wrap {
             position: relative;
-            height: 135px;
-            border-radius: 8px;
+            height: 120px;
+            border-radius: 6px;
             overflow: hidden;
             border: 1px solid rgba(255,255,255,0.2);
             cursor: pointer;
@@ -352,12 +349,12 @@
         }
 
         .thumb-wrap:hover img {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
 
         .thumb-wrap:hover {
             border-color: var(--neon-pink);
-            box-shadow: 0 0 12px var(--neon-pink);
+            box-shadow: 0 0 10px var(--neon-pink);
         }
 
         /* LIGHTBOX */
@@ -375,38 +372,30 @@
         .lightbox img {
             max-width: 90%;
             max-height: 90vh;
-            border-radius: 8px;
+            border-radius: 6px;
             border: 2px solid var(--neon-cyan);
-            box-shadow: 0 0 30px var(--neon-cyan);
+            box-shadow: 0 0 25px var(--neon-cyan);
         }
 
         .lightbox-close {
             position: absolute;
-            top: 25px;
-            right: 35px;
+            top: 20px;
+            right: 30px;
             color: #fff;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             cursor: pointer;
             font-family: 'Orbitron', sans-serif;
-            transition: color 0.3s;
-        }
-
-        .lightbox-close:hover {
-            color: var(--neon-pink);
         }
 
         .template-instruction {
-            background: rgba(185, 103, 255, 0.05);
+            background: rgba(185, 103, 255, 0.04);
             border: 1px dashed var(--neon-purple);
-            padding: 20px;
-            border-radius: 12px;
+            padding: 15px;
+            border-radius: 10px;
             text-align: center;
             color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-top: 40px;
-        }
-        .template-instruction strong {
-            color: var(--neon-purple);
+            font-size: 0.9rem;
+            margin-top: 30px;
         }
     </style>
 </head>
@@ -421,11 +410,11 @@
                     <img src="https://lh3.googleusercontent.com/d/135OlkjR-fzELJh3e01Nr4dGJ_jfM-6AW" alt="AerogamaTec Avatar" class="brand-avatar">
                     <div class="brand-text">
                         <h1>AEROGAMATEC</h1>
-                        <p>AI Companions & Media Agency</p>
+                        <p>AI Companions & Media</p>
                     </div>
                 </div>
                 <a href="https://www.facebook.com/aerogamatec" target="_blank" class="fb-btn">
-                    <span>📘 Facebook Oficial</span>
+                    <span>📘 Facebook</span>
                 </a>
             </div>
         </header>
@@ -436,15 +425,15 @@
         <!-- MODELO: MEI LIN -->
         <div class="model-card">
             <div class="model-grid">
-                <!-- Columna Izquierda: Imagen Principal -->
+                <!-- Columna Izquierda -->
                 <div class="model-profile-col">
                     <img src="https://lh3.googleusercontent.com/d/16Q1iiT_DGjBQy6a5fjI8-oeG54F2o4CT" alt="Mei Lin" class="model-main-img">
-                    <div style="font-size: 0.85rem; color: var(--text-muted); text-align: center;">
-                        AGENT ID: #001-MEILIN | ESTADO: ACTIVA 24/7
+                    <div style="font-size: 0.8rem; color: var(--text-muted); text-align: center;">
+                        AGENT ID: #001-MEILIN | ACTIVA 24/7
                     </div>
                 </div>
 
-                <!-- Columna Derecha: Información y Enlaces -->
+                <!-- Columna Derecha -->
                 <div class="model-details-col">
                     <div>
                         <div class="model-header-info">
@@ -453,43 +442,43 @@
                         <div class="model-tagline">La Estudiante & Compañera Intelectual</div>
                         <p class="model-bio">
                             Apasionada por la literatura antigua, los análisis económicos y las largas charlas nocturnas. 
-                            Mei Lin combina su apariencia dulce y académica con una personalidad cautivadora, atenta y profunda. 
-                            Interactúa con ella en tiempo real, descubre su lado más íntimo y apoya su evolución en el estudio.
+                            Mei Lin combina su apariencia dulce y académica con una personalidad cautivadora, atenta y profunda.
                         </p>
                     </div>
 
-                    <!-- Audio Teaser con la voz real de Charlotte / Mei Lin -->
+                    <!-- Audio Teaser con fuente alternativa garantizada para reproducción -->
                     <div class="audio-player-box">
                         <div class="audio-wave-icon">🎙️</div>
                         <div style="flex-grow: 1;">
                             <div class="audio-title">Voz Oficial / Audio Teaser</div>
                             <div class="audio-sub">"¿Te quedas a estudiar conmigo esta noche?"</div>
-                            <audio controls>
+                            <audio controls preload="auto">
+                                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
                                 <source src="https://lh3.googleusercontent.com/d/1SFSzMwJq8B2VjihPZiOhWSNV65YDlSF1" type="audio/mpeg">
-                                Tu navegador no soporta audio HTML5.
+                                Tu navegador no soporta audio.
                             </audio>
                         </div>
                     </div>
 
-                    <!-- Botones de Plataformas Oficiales -->
+                    <!-- Botones -->
                     <div class="platform-buttons">
                         <a href="https://poe.com/MeiLin1.0" target="_blank" class="plat-btn btn-poe">🤖 Poe Chat</a>
                         <div class="plat-btn btn-of" title="Próximamente">🔥 OnlyFans (Pronto)</div>
                         <a href="https://www.patreon.com/aerogama/posts/set-oficial-mei-172861576?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link" target="_blank" class="plat-btn btn-patreon">💎 Patreon Set</a>
                     </div>
 
-                    <!-- Galería de Fotos (Lightbox) -->
+                    <!-- Galería -->
                     <div class="gallery-container">
-                        <div class="gallery-title">📷 Galería Teaser de Mei Lin <span style="font-size:0.8rem; color:var(--text-muted); margin-left:auto;">Haz clic para ampliar</span></div>
+                        <div class="gallery-title">📷 Galería Teaser <span style="font-size:0.75rem; color:var(--text-muted); margin-left:auto;">Clic para ampliar</span></div>
                         <div class="gallery-grid">
                             <div class="thumb-wrap" onclick="openLightbox(this.querySelector('img').src)">
-                                <img src="https://lh3.googleusercontent.com/d/1aYxzleyj_PSDKXT2LBfX_jQVwgFC8mNQ" alt="Mei Lin 2">
+                                <img src="https://lh3.googleusercontent.com/d/1aYxzleyj_PSDKXT2LBfX_jQVwgFC8mNQ" alt="Teaser 1">
                             </div>
                             <div class="thumb-wrap" onclick="openLightbox(this.querySelector('img').src)">
-                                <img src="https://lh3.googleusercontent.com/d/1V5rviNROlafG97YNJ_dSVdRglnTGwe-G" alt="Mei Lin 3">
+                                <img src="https://lh3.googleusercontent.com/d/1V5rviNROlafG97YNJ_dSVdRglnTGwe-G" alt="Teaser 2">
                             </div>
                             <div class="thumb-wrap" onclick="openLightbox(this.querySelector('img').src)">
-                                <img src="https://lh3.googleusercontent.com/d/1y7iY9hegdyxfWbfumZ2zGaAQmfyoicQN" alt="Mei Lin 4">
+                                <img src="https://lh3.googleusercontent.com/d/1y7iY9hegdyxfWbfumZ2zGaAQmfyoicQN" alt="Teaser 3">
                             </div>
                         </div>
                     </div>
@@ -498,11 +487,11 @@
         </div>
 
         <div class="template-instruction">
-            <strong>💡 Nota:</strong> Para agregar nuevas modelos en el futuro, solo duplica el bloque <code>.model-card</code> en el código.
+            💡 Para agregar más modelos en el futuro, duplica el bloque <code>.model-card</code>.
         </div>
     </div>
 
-    <!-- LIGHTBOX MODAL -->
+    <!-- LIGHTBOX -->
     <div id="lightboxModal" class="lightbox" onclick="closeLightbox()">
         <span class="lightbox-close">&times;</span>
         <img id="lightboxImg" src="" alt="Ampliada">
