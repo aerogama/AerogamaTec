@@ -43,70 +43,75 @@
             margin: 0 auto;
         }
 
-        /* HEADER & BANNER */
+        /* BANNER CORREGIDO Y ELEGANTE */
         .header-banner {
             position: relative;
             width: 100%;
-            height: 180px;
+            height: 160px;
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid var(--neon-cyan);
-            box-shadow: 0 0 20px rgba(5, 217, 232, 0.2);
-            margin-bottom: 30px;
+            box-shadow: 0 0 20px rgba(5, 217, 232, 0.25);
+            margin-bottom: 25px;
+            background: #000;
         }
 
-        .header-banner img {
+        .header-banner img.banner-bg {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.75);
+            object-position: center 30%;
+            filter: brightness(0.65) contrast(1.1);
         }
 
         .header-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(5,5,8,0.1) 0%, rgba(5,5,8,0.85) 100%);
+            background: linear-gradient(90deg, rgba(5,5,8,0.9) 0%, rgba(5,5,8,0.4) 50%, rgba(5,5,8,0.85) 100%);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 15px 25px;
-            flex-wrap: wrap;
-            gap: 15px;
+            padding: 0 25px;
         }
 
         .brand-info {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
         }
 
         .brand-avatar {
-            width: 48px;
-            height: 48px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             border: 2px solid var(--neon-pink);
             object-fit: cover;
-            box-shadow: 0 0 10px var(--neon-pink);
+            box-shadow: 0 0 12px var(--neon-pink);
+            background: #000;
         }
 
         .brand-text h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 900;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             color: #fff;
-            text-shadow: 0 0 8px var(--neon-pink);
+            text-shadow: 0 0 10px var(--neon-pink), 0 0 20px rgba(255, 42, 109, 0.6);
+            line-height: 1.1;
         }
 
         .brand-text p {
-            color: var(--text-muted);
+            color: var(--neon-cyan);
             font-size: 0.8rem;
-            letter-spacing: 1px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            text-shadow: 0 0 5px rgba(5, 217, 232, 0.5);
         }
 
         .fb-btn {
-            background: linear-gradient(135deg, #1877f2, #0d5bb9);
+            background: rgba(24, 119, 242, 0.2);
+            border: 1px solid #1877f2;
             color: white;
             padding: 8px 16px;
             border-radius: 6px;
@@ -114,21 +119,23 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 0.8rem;
             font-weight: 600;
-            box-shadow: 0 0 10px rgba(24, 119, 242, 0.4);
+            box-shadow: 0 0 10px rgba(24, 119, 242, 0.3);
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            backdrop-filter: blur(4px);
         }
 
         .fb-btn:hover {
+            background: #1877f2;
+            box-shadow: 0 0 20px rgba(24, 119, 242, 0.8);
             transform: translateY(-2px);
-            box-shadow: 0 0 18px rgba(24, 119, 242, 0.7);
         }
 
         .section-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
@@ -161,9 +168,16 @@
             .model-grid {
                 grid-template-columns: 1fr;
             }
+            .header-banner {
+                height: auto;
+                min-height: 140px;
+            }
             .header-overlay {
                 flex-direction: column;
+                justify-content: center;
                 align-items: flex-start;
+                padding: 15px;
+                gap: 12px;
             }
         }
 
@@ -414,9 +428,9 @@
 <body>
 
     <div class="container">
-        <!-- HEADER / BANNER -->
+        <!-- HEADER / BANNER REDISEÑADO Y CENTRADO -->
         <header class="header-banner">
-            <img src="https://lh3.googleusercontent.com/d/1fPQ3TnIB09lXN2TFpYqviyyYcz4WU9lS" alt="AerogamaTec Banner">
+            <img src="https://lh3.googleusercontent.com/d/1fPQ3TnIB09lXN2TFpYqviyyYcz4WU9lS" alt="AerogamaTec Banner" class="banner-bg">
             <div class="header-overlay">
                 <div class="brand-info">
                     <img src="https://lh3.googleusercontent.com/d/135OlkjR-fzELJh3e01Nr4dGJ_jfM-6AW" alt="AerogamaTec Avatar" class="brand-avatar">
@@ -458,7 +472,7 @@
                         </p>
                     </div>
 
-                    <!-- REPRODUCTOR APUNTANDO AL ARCHIVO LOCAL EN GITHUB -->
+                    <!-- AUDIO PLAYER LOCAL -->
                     <div class="audio-player-box">
                         <div class="audio-wave-icon">🎙️</div>
                         <div style="flex-grow: 1;">
@@ -471,7 +485,7 @@
                         </div>
                     </div>
 
-                    <!-- Botones de Plataformas -->
+                    <!-- BOTONES -->
                     <div class="platform-buttons">
                         <a href="https://poe.com/MeiLin1.0" target="_blank" class="plat-btn btn-poe">🤖 Poe Chat</a>
                         <a href="https://eternalai.org/share/m/6jepge?r=85j88p0xt" target="_blank" class="plat-btn btn-eternal">🔮 Eternal AI</a>
@@ -479,7 +493,7 @@
                         <a href="https://www.patreon.com/aerogama/posts/set-oficial-mei-172861576?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link" target="_blank" class="plat-btn btn-patreon">💎 Patreon Set</a>
                     </div>
 
-                    <!-- Galería -->
+                    <!-- GALERÍA -->
                     <div class="gallery-container">
                         <div class="gallery-title">📷 Galería Teaser <span style="font-size:0.75rem; color:var(--text-muted); margin-left:auto;">Clic para ampliar</span></div>
                         <div class="gallery-grid">
