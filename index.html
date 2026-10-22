@@ -12,7 +12,6 @@
             --neon-pink: #ff2a6d;
             --neon-cyan: #05d9e8;
             --neon-purple: #b967ff;
-            --neon-gold: #ffb703;
             --text-main: #f0f0f5;
             --text-muted: #8b8b9e;
             --border-glow: rgba(255, 42, 109, 0.4);
@@ -44,7 +43,7 @@
             margin: 0 auto;
         }
 
-        /* HEADER & BANNER OPTIMIZADO */
+        /* HEADER & BANNER */
         .header-banner {
             position: relative;
             width: 100%;
@@ -255,7 +254,7 @@
             filter: invert(1) hue-rotate(180deg);
         }
 
-        /* BUTTONS GRID */
+        /* PLATFORM BUTTONS */
         .platform-buttons {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -459,15 +458,15 @@
                         </p>
                     </div>
 
-                    <!-- Audio Teaser -->
+                    <!-- REPRODUCTOR APUNTANDO AL ARCHIVO LOCAL EN GITHUB -->
                     <div class="audio-player-box">
                         <div class="audio-wave-icon">🎙️</div>
                         <div style="flex-grow: 1;">
                             <div class="audio-title">Voz Oficial / Audio Teaser</div>
                             <div class="audio-sub">"¿Te quedas a estudiar conmigo esta noche?"</div>
-                            <audio controls preload="metadata">
-                                <source src="https://docs.google.com/uc?export=download&id=1SFSzMwJq8B2VjihPZiOhWSNV65YDlSF1" type="audio/mpeg">
-                                Tu navegador no soporta audio.
+                            <audio controls preload="auto">
+                                <source src="meilin-voice.mp3" type="audio/mpeg">
+                                Tu navegador no soporta el reproductor de audio.
                             </audio>
                         </div>
                     </div>
