@@ -14,6 +14,7 @@
             --neon-purple: #b967ff;
             --neon-green: #00ff87;
             --neon-blue: #00a2ff;
+            --neon-crush: #ff3399;
             --text-main: #f0f0f5;
             --text-muted: #8b8b9e;
             --border-glow: rgba(255, 42, 109, 0.4);
@@ -215,16 +216,98 @@
         .model-profile-col {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
 
         .model-main-img {
             width: 100%;
-            height: 400px;
+            height: 380px;
             object-fit: cover;
             border-radius: 10px;
             border: 2px solid var(--neon-pink);
             box-shadow: 0 0 15px rgba(255, 42, 109, 0.3);
+        }
+
+        /* TERMINAL DE CHAT RÁPIDO (ABAJO DE LA FOTO) */
+        .chat-terminal-box {
+            background: rgba(5, 217, 232, 0.05);
+            border: 1px solid var(--neon-cyan);
+            border-radius: 10px;
+            padding: 12px 14px;
+            box-shadow: 0 0 15px rgba(5, 217, 232, 0.15);
+        }
+
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.72rem;
+            color: var(--neon-cyan);
+            letter-spacing: 1px;
+        }
+
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--neon-green);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--neon-green);
+            animation: blink 1.8s infinite;
+            margin-right: 4px;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .terminal-dialogue {
+            background: rgba(0, 0, 0, 0.6);
+            border-left: 2px solid var(--neon-pink);
+            border-radius: 0 6px 6px 0;
+            padding: 8px 10px;
+            font-size: 0.85rem;
+            color: #fff;
+            line-height: 1.35;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .terminal-dialogue span {
+            color: var(--neon-pink);
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .terminal-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .terminal-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--text-main);
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.72rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.25s ease;
+        }
+
+        .terminal-btn:hover {
+            border-color: var(--neon-cyan);
+            color: var(--neon-cyan);
+            background: rgba(5, 217, 232, 0.1);
+            transform: translateX(3px);
         }
 
         .model-details-col {
@@ -355,6 +438,18 @@
             background: var(--neon-blue); 
             color: #000; 
             box-shadow: 0 0 15px var(--neon-blue); 
+            transform: translateY(-2px);
+        }
+
+        .btn-crushon { 
+            background: transparent; 
+            border: 2px solid var(--neon-crush); 
+            color: var(--neon-crush); 
+        }
+        .btn-crushon:hover { 
+            background: var(--neon-crush); 
+            color: #fff; 
+            box-shadow: 0 0 15px var(--neon-crush); 
             transform: translateY(-2px);
         }
 
@@ -630,8 +725,30 @@
                 <!-- Columna Izquierda -->
                 <div class="model-profile-col">
                     <img src="https://lh3.googleusercontent.com/d/16Q1iiT_DGjBQy6a5fjI8-oeG54F2o4CT" alt="Mei Lin" class="model-main-img">
-                    <div style="font-size: 0.75rem; color: var(--text-muted); text-align: center;">
-                        AGENT ID: #001-MEILIN | ACTIVA 24/7
+                    
+                    <!-- TERMINAL DE INTERACCIÓN RÁPIDA -->
+                    <div class="chat-terminal-box">
+                        <div class="terminal-header">
+                            <span><span class="status-dot"></span>ONLINE</span>
+                            <span style="opacity:0.6;">ID: #001-MEILIN</span>
+                        </div>
+                        <div class="terminal-dialogue">
+                            <span>Mei Lin:</span> "¿Interesado en la literatura clásica o prefieres que charlemos de algo más privado en la biblioteca? Eligeme un canal..."
+                        </div>
+                        <div class="terminal-actions">
+                            <a href="https://janitorai.com/es/characters/e0c64de7-6c07-4144-94e1-792944759af2_character-mei-lin-la-chica-estudiosa-con-un-secreto-intimo-en-la-biblioteca" target="_blank" class="terminal-btn">
+                                <span>💬 Janitor AI (Sin Filtros)</span>
+                                <span>➔</span>
+                            </a>
+                            <a href="https://crushon.ai/es/character/1d49b5b3-ee95-4882-8e7c-a2114ffa1981/chat/2e3502c5-cedb-11f1-a24c-26a2be99d334?from=ChatRoomScreen" target="_blank" class="terminal-btn">
+                                <span>💖 Crushon AI (Directo)</span>
+                                <span>➔</span>
+                            </a>
+                            <a href="https://poe.com/MeiLin1.0" target="_blank" class="terminal-btn">
+                                <span>🤖 Poe Chat (Oficial)</span>
+                                <span>➔</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -666,6 +783,7 @@
                         <a href="https://poe.com/MeiLin1.0" target="_blank" class="plat-btn btn-poe">🤖 Poe Chat</a>
                         <a href="https://janitorai.com/es/characters/e0c64de7-6c07-4144-94e1-792944759af2_character-mei-lin-la-chica-estudiosa-con-un-secreto-intimo-en-la-biblioteca" target="_blank" class="plat-btn btn-janitor">🧹 Janitor AI</a>
                         <a href="https://chub.ai/characters/impartial_grass_44262/mei-lin-6791b1b80e37" target="_blank" class="plat-btn btn-chub">🌐 Chub.ai</a>
+                        <a href="https://crushon.ai/es/character/1d49b5b3-ee95-4882-8e7c-a2114ffa1981/chat/2e3502c5-cedb-11f1-a24c-26a2be99d334?from=ChatRoomScreen" target="_blank" class="plat-btn btn-crushon">💖 Crushon.ai</a>
                         <a href="https://eternalai.org/share/m/6jepge?r=85j88p0xt" target="_blank" class="plat-btn btn-eternal">🔮 Eternal AI</a>
                         <div class="plat-btn btn-of" title="Próximamente">🔥 OnlyFans (Pronto)</div>
                         <a href="https://www.patreon.com/aerogama/posts/set-oficial-mei-172861576?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link" target="_blank" class="plat-btn btn-patreon">💎 Patreon Set</a>
