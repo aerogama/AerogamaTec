@@ -43,11 +43,11 @@
             margin: 0 auto;
         }
 
-        /* BANNER CIBERNÉTICO CON FONDO DIFUMINADO Y ARTE COMPLETO */
+        /* HEADER / BANNER AMBIENTAL AMPLIADO */
         .header-banner {
             position: relative;
             width: 100%;
-            height: 240px;
+            height: 380px;
             border-radius: 14px;
             overflow: hidden;
             border: 1px solid var(--neon-cyan);
@@ -59,37 +59,36 @@
             align-items: center;
         }
 
-        /* 1. Imagen de fondo ambiente difuminada */
         .banner-blur-bg {
             position: absolute;
             inset: -20px;
             width: calc(100% + 40px);
             height: calc(100% + 40px);
             object-fit: cover;
-            filter: blur(18px) brightness(0.4) contrast(1.2);
+            filter: blur(25px) brightness(0.4) contrast(1.2);
             z-index: 1;
         }
 
-        /* 2. Arte central sin ningún recorte */
         .banner-main-art {
             position: relative;
             z-index: 2;
             height: 100%;
+            width: auto;
             max-width: 100%;
             object-fit: contain;
-            filter: drop-shadow(0 0 15px rgba(5, 217, 232, 0.4));
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 20px rgba(5, 217, 232, 0.5));
         }
 
-        /* 3. Capa de interacción y branding */
         .header-overlay {
             position: absolute;
             inset: 0;
             z-index: 3;
-            background: linear-gradient(90deg, rgba(5,5,8,0.85) 0%, rgba(5,5,8,0.1) 40%, rgba(5,5,8,0.1) 60%, rgba(5,5,8,0.85) 100%);
+            background: linear-gradient(90deg, rgba(5,5,8,0.85) 0%, rgba(5,5,8,0.1) 35%, rgba(5,5,8,0.1) 65%, rgba(5,5,8,0.85) 100%);
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: space-between;
-            padding: 0 25px;
+            padding: 20px 25px;
             pointer-events: none;
         }
 
@@ -101,11 +100,12 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            background: rgba(5, 5, 8, 0.65);
+            background: rgba(5, 5, 8, 0.75);
             padding: 10px 16px;
             border-radius: 10px;
-            border: 1px solid rgba(255, 42, 109, 0.3);
-            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 42, 109, 0.4);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
         }
 
         .brand-avatar {
@@ -137,7 +137,7 @@
         }
 
         .fb-btn {
-            background: rgba(24, 119, 242, 0.25);
+            background: rgba(24, 119, 242, 0.3);
             border: 1px solid #1877f2;
             color: white;
             padding: 8px 16px;
@@ -151,7 +151,7 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
         }
 
         .fb-btn:hover {
@@ -196,11 +196,14 @@
                 grid-template-columns: 1fr;
             }
             .header-banner {
-                height: 180px;
+                height: 260px;
+            }
+            .banner-main-art {
+                transform: scale(1);
             }
             .header-overlay {
                 flex-direction: column;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: flex-start;
                 padding: 15px;
                 gap: 10px;
@@ -303,268 +306,4 @@
         }
 
         .plat-btn {
-            padding: 10px 12px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            font-size: 0.82rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
-
-        .btn-poe { 
-            background: transparent; 
-            border: 2px solid var(--neon-cyan); 
-            color: var(--neon-cyan); 
-        }
-        .btn-poe:hover { 
-            background: var(--neon-cyan); 
-            color: #000; 
-            box-shadow: 0 0 15px var(--neon-cyan); 
-            transform: translateY(-2px);
-        }
-
-        .btn-eternal { 
-            background: transparent; 
-            border: 2px solid var(--neon-purple); 
-            color: var(--neon-purple); 
-        }
-        .btn-eternal:hover { 
-            background: var(--neon-purple); 
-            color: #fff; 
-            box-shadow: 0 0 15px var(--neon-purple); 
-            transform: translateY(-2px);
-        }
-
-        .btn-of { 
-            background: rgba(255,255,255,0.02); 
-            border: 2px dashed rgba(255,255,255,0.2); 
-            color: var(--text-muted); 
-            cursor: not-allowed;
-        }
-
-        .btn-patreon { 
-            background: transparent; 
-            border: 2px solid #ff424d; 
-            color: #ff424d; 
-        }
-        .btn-patreon:hover { 
-            background: #ff424d; 
-            color: #fff; 
-            box-shadow: 0 0 15px #ff424d; 
-            transform: translateY(-2px);
-        }
-
-        /* GALLERY */
-        .gallery-container {
-            margin-top: 15px;
-            border-top: 1px dashed rgba(255,255,255,0.15);
-            padding-top: 12px;
-        }
-
-        .gallery-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.95rem;
-            color: var(--text-main);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
-            gap: 8px;
-        }
-
-        .thumb-wrap {
-            position: relative;
-            height: 110px;
-            border-radius: 6px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.2);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .thumb-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .thumb-wrap:hover img {
-            transform: scale(1.08);
-        }
-
-        .thumb-wrap:hover {
-            border-color: var(--neon-pink);
-            box-shadow: 0 0 10px var(--neon-pink);
-        }
-
-        /* LIGHTBOX */
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            inset: 0;
-            background: rgba(0,0,0,0.92);
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90vh;
-            border-radius: 6px;
-            border: 2px solid var(--neon-cyan);
-            box-shadow: 0 0 25px var(--neon-cyan);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: #fff;
-            font-size: 2.2rem;
-            cursor: pointer;
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        .template-instruction {
-            background: rgba(185, 103, 255, 0.04);
-            border: 1px dashed var(--neon-purple);
-            padding: 12px;
-            border-radius: 8px;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-top: 25px;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <!-- HEADER / BANNER AMBIENTAL DIFUMINADO + ARTE COMPLETO -->
-        <header class="header-banner">
-            <!-- Capa 1: Fondo difuminado -->
-            <img src="https://lh3.googleusercontent.com/d/1fPQ3TnIB09lXN2TFpYqviyyYcz4WU9lS" alt="Fondo" class="banner-blur-bg">
-            
-            <!-- Capa 2: Arte central completo sin cortes -->
-            <img src="https://lh3.googleusercontent.com/d/1fPQ3TnIB09lXN2TFpYqviyyYcz4WU9lS" alt="AerogamaTec Banner" class="banner-main-art">
-            
-            <!-- Capa 3: Overlay y Branding -->
-            <div class="header-overlay">
-                <div class="brand-info">
-                    <img src="https://lh3.googleusercontent.com/d/135OlkjR-fzELJh3e01Nr4dGJ_jfM-6AW" alt="AerogamaTec Avatar" class="brand-avatar">
-                    <div class="brand-text">
-                        <h1>AEROGAMATEC</h1>
-                        <p>AI Companions & Media</p>
-                    </div>
-                </div>
-                <a href="https://www.facebook.com/aerogamatec" target="_blank" class="fb-btn">
-                    <span>📘 Facebook</span>
-                </a>
-            </div>
-        </header>
-
-        <!-- TÍTULO -->
-        <h2 class="section-title">✨ Catálogo de Modelos IA Activas</h2>
-
-        <!-- MODELO: MEI LIN -->
-        <div class="model-card">
-            <div class="model-grid">
-                <!-- Columna Izquierda -->
-                <div class="model-profile-col">
-                    <img src="https://lh3.googleusercontent.com/d/16Q1iiT_DGjBQy6a5fjI8-oeG54F2o4CT" alt="Mei Lin" class="model-main-img">
-                    <div style="font-size: 0.75rem; color: var(--text-muted); text-align: center;">
-                        AGENT ID: #001-MEILIN | ACTIVA 24/7
-                    </div>
-                </div>
-
-                <!-- Columna Derecha -->
-                <div class="model-details-col">
-                    <div>
-                        <div class="model-header-info">
-                            <h2>Mei Lin</h2>
-                        </div>
-                        <div class="model-tagline">La Estudiante & Compañera Intelectual</div>
-                        <p class="model-bio">
-                            Apasionada por la literatura antigua, los análisis económicos y las largas charlas nocturnas. 
-                            Mei Lin combina su apariencia dulce y académica con una personalidad cautivadora, atenta y profunda.
-                        </p>
-                    </div>
-
-                    <!-- AUDIO PLAYER LOCAL -->
-                    <div class="audio-player-box">
-                        <div class="audio-wave-icon">🎙️</div>
-                        <div style="flex-grow: 1;">
-                            <div class="audio-title">Voz Oficial / Audio Teaser</div>
-                            <div class="audio-sub">"¿Te quedas a estudiar conmigo esta noche?"</div>
-                            <audio controls preload="auto">
-                                <source src="meilin-voice.mp3" type="audio/mpeg">
-                                Tu navegador no soporta el reproductor de audio.
-                            </audio>
-                        </div>
-                    </div>
-
-                    <!-- BOTONES DE PLATAFORMAS -->
-                    <div class="platform-buttons">
-                        <a href="https://poe.com/MeiLin1.0" target="_blank" class="plat-btn btn-poe">🤖 Poe Chat</a>
-                        <a href="https://eternalai.org/share/m/6jepge?r=85j88p0xt" target="_blank" class="plat-btn btn-eternal">🔮 Eternal AI</a>
-                        <div class="plat-btn btn-of" title="Próximamente">🔥 OnlyFans (Pronto)</div>
-                        <a href="https://www.patreon.com/aerogama/posts/set-oficial-mei-172861576?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link" target="_blank" class="plat-btn btn-patreon">💎 Patreon Set</a>
-                    </div>
-
-                    <!-- GALERÍA -->
-                    <div class="gallery-container">
-                        <div class="gallery-title">📷 Galería Teaser <span style="font-size:0.75rem; color:var(--text-muted); margin-left:auto;">Clic para ampliar</span></div>
-                        <div class="gallery-grid">
-                            <div class="thumb-wrap" onclick="openLightbox(this.querySelector('img').src)">
-                                <img src="https://lh3.googleusercontent.com/d/1aYxzleyj_PSDKXT2LBfX_jQVwgFC8mNQ" alt="Teaser 1">
-                            </div>
-                            <div class="thumb-wrap" onclick="openLightbox(this.querySelector('img').src)">
-                                <img src="https://lh3.googleusercontent.com/d/1V5rviNROlafG97YNJ_dSVdRglnTGwe-G" alt="Teaser 2">
-                            </div>
-                            <div class="thumb-wrap" onclick="openLightbox(this.querySelector('img').src)">
-                                <img src="https://lh3.googleusercontent.com/d/1y7iY9hegdyxfWbfumZ2zGaAQmfyoicQN" alt="Teaser 3">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="template-instruction">
-            💡 Para agregar más modelos en el futuro, duplica el bloque <code>.model-card</code>.
-        </div>
-    </div>
-
-    <!-- LIGHTBOX -->
-    <div id="lightboxModal" class="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close">&times;</span>
-        <img id="lightboxImg" src="" alt="Ampliada">
-    </div>
-
-    <script>
-        function openLightbox(imgSrc) {
-            const modal = document.getElementById('lightboxModal');
-            const modalImg = document.getElementById('lightboxImg');
-            modal.style.display = 'flex';
-            modalImg.src = imgSrc;
-        }
-        function closeLightbox() {
-            document.getElementById('lightboxModal').style.display = 'none';
-        }
-    </script>
-</body>
-</html>
+            padding: 10
