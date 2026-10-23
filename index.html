@@ -415,7 +415,6 @@
             box-shadow: 0 0 10px rgba(255, 42, 109, 0.3);
         }
 
-        /* Overlay con icono de candado sobre miniaturas borrosas */
         .blur-overlay {
             position: absolute;
             inset: 0;
@@ -447,6 +446,82 @@
         .thumb-wrap:hover {
             border-color: var(--neon-cyan);
             box-shadow: 0 0 12px var(--neon-cyan);
+        }
+
+        /* SECCIÓN DEVLOG / BLOG PATREON */
+        .devlog-box {
+            background: rgba(255, 66, 77, 0.05);
+            border: 1px solid rgba(255, 66, 77, 0.4);
+            border-radius: 12px;
+            padding: 22px;
+            margin-top: 30px;
+            box-shadow: 0 0 20px rgba(255, 66, 77, 0.15);
+        }
+
+        .devlog-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .devlog-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.15rem;
+            color: #ff424d;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 1px;
+        }
+
+        .devlog-content {
+            color: var(--text-main);
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        .devlog-content p {
+            margin-bottom: 12px;
+        }
+
+        .devlog-list {
+            margin: 12px 0 18px 20px;
+            color: var(--neon-cyan);
+        }
+
+        .devlog-list li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .devlog-list li strong {
+            color: #fff;
+        }
+
+        .patreon-post-btn {
+            background: linear-gradient(135deg, #ff424d, #e02f3a);
+            color: #fff;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 0 15px rgba(255, 66, 77, 0.4);
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .patreon-post-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(255, 66, 77, 0.8);
+            background: #ff424d;
         }
 
         /* LIGHTBOX */
@@ -619,6 +694,42 @@
 
                 </div>
             </div>
+
+            <!-- SECCIÓN DEVLOG / PATREON UPDATE -->
+            <div class="devlog-box">
+                <div class="devlog-header">
+                    <div class="devlog-title">
+                        <span>🛠️ Detrás de Cámaras: Mei Lin & El Futuro del Proyecto</span>
+                    </div>
+                </div>
+                <div class="devlog-content">
+                    <p>
+                        <strong>El detrás de cámaras de Mei Lin: Cuando la IA decide tomarse libertades anatómicas 😅 (Y cómo vamos a solucionarlo)</strong>
+                    </p>
+                    <p>
+                        ¡Hola a todos los seguidores de Aerogama! 👋<br>
+                        Hoy queremos compartir algo de nuestro detrás de cámaras con ustedes. En Aerogamatec nos apasiona crear contenido de alta calidad y explorar nuevas estéticas para nuestros personajes, como el universo Dark Academia de Mei Lin.
+                    </p>
+                    <p>
+                        Sin embargo, crear contenido digital e interactivo de nivel profesional requiere recursos exigentes. Actualmente, las herramientas con las que contamos operan bajo un presupuesto limitado. Y como pueden ver en la galería de errores... los resultados a veces son dignos de una película de surrealismo o de terror 😂 (¡piernas voladoras, anatomías imposibles y prendas que se fusionan!).
+                    </p>
+                    
+                    <p style="color: #fff; font-weight: 700; margin-top: 15px;">🎯 Nuestra Meta con el Proyecto:</p>
+                    <ul class="devlog-list">
+                        <li><strong>Calidad Visual y Video:</strong> Ofrecerles contenido gráfico limpio, en ultra alta resolución, sin marcas de agua, sin censuras absurdas y con animación/video de máxima fidelidad.</li>
+                        <li><strong>Independencia Interactiva:</strong> Dejar de depender de plataformas de suscripción costosas (como Poe o Eternal AI) que limitan la experiencia o rompen el personaje. Queremos infraestructura propia para interacciones fluidas, realistas y 100% libres de censura.</li>
+                    </ul>
+
+                    <p>
+                        💡 Aerogamatec es un equipo independiente que solventa sus propios costos. El 100% de lo recaudado en Patreon estará destinado a financiar licencias avanzadas de generación visual, renderizado de video sin restricciones y servidores propios.
+                    </p>
+
+                    <a href="https://www.patreon.com/aerogama/posts/el-detras-de-de-173134413" target="_blank" class="patreon-post-btn">
+                        🚀 Leer Post Completo y Apoyar en Patreon
+                    </a>
+                </div>
+            </div>
+
         </div>
 
         <div class="template-instruction">
